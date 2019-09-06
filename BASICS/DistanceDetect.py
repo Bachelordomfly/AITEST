@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import cv2
 import numpy as np
-import matplotlib.pyplot as plot
+# import matplotlib.pyplot as plot
 
 #已知常量
 #相机对白纸的距离
@@ -9,14 +9,6 @@ import matplotlib.pyplot as plot
 KNOWN_DISTANCE = 32.0
 
 KNOWN_WIDTH = 25.5
-
-
-'''
-2017/11/22 log
-1.长度单位问题   
-
-2.代码结构重新整理
-'''
 
 
 '''
@@ -111,6 +103,7 @@ def find_marker(image):
 	
 	#以key为判断条件求cnts(轮廓)的最大值
 	c = max(cnts, key = cv2.contourArea)
+	print(c)
 	cv2.drawContours(image,c,-1,(0,255,0),3)
 	# compute the bounding box of the of the paper region and return it
 	# 返回包含 (x, y) 坐标和像素高度和宽度信息的边界框给调用函数
